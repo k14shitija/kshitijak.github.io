@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Kshitija Kumbharkar | Mechanical & ADAS Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #020617;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56,189,248,0.1);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --card: #020617;
+      --border: #1f2937;
+      --shadow: 0 18px 45px rgba(15,23,42,0.55);
+      --radius: 14px;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top, #1d273b 0, #020617 55%, #000 100%);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 32px 16px 80px;
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 40px;
+      padding: 24px 24px 22px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(15,23,42,0.9), rgba(15,23,42,0.96));
+      border: 1px solid rgba(148,163,184,0.28);
+      box-shadow: var(--shadow);
+    }
+
+    @media (min-width: 720px) {
+      header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
+
+    .name-block h1 {
+      font-size: 1.9rem;
+      letter-spacing: 0.04em;
+    }
+
+    .name-block p {
+      color: var(--muted);
+      font-size: 0.97rem;
+      margin-top: 4px;
+    }
+
+    .tagline {
+      color: var(--accent);
+      font-size: 0.92rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .contact {
+      text-align: left;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 2.4fr) minmax(0, 1.4fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 860px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    section {
+      margin-bottom: 24px;
+      background: radial-gradient(circle at top left, rgba(15,23,42,0.8), #020617 60%);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 18px 18px 16px;
+    }
+
+    h2 {
+      font-size: 1rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.4);
+      padding: 6px 12px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-right: 6px;
+      margin-bottom: 6px;
+    }
+
+    .pill span {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    p {
+      font-size: 0.93rem;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .project {
+      margin-bottom: 16px;
+      padding: 12px 12px 10px;
+      border-radius: 12px;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(31,41,55,0.9);
+    }
+
+    .project:last-child { margin-bottom: 0; }
+
+    .project-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .project-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .project ul {
+      list-style: disc;
+      margin-left: 18px;
+      margin-top: 4px;
+    }
+
+    .project li {
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .exp-item {
+      margin-bottom: 14px;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.88rem;
+      margin-bottom: 2px;
+    }
+
+    .exp-header strong {
+      font-weight: 600;
+    }
+
+    .exp-role {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .exp-item ul {
+      list-style: disc;
+      margin-left: 18px;
+      margin-top: 2px;
+    }
+
+    .exp-item li {
+      font-size: 0.9rem;
+      margin-bottom: 3px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.9rem;
+    }
+
+    .skills-list strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    footer {
+      max-width: 980px;
+      margin: 26px auto 0;
+      padding-top: 16px;
+      border-top: 1px solid rgba(15,23,42,0.9);
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    a.inline-link {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a.inline-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="name-block">
+        <div class="tagline">Mechanical & ADAS Engineer</div>
+        <h1>Kshitija Sunil Kumbharkar</h1>
+        <p>Designing fixtures, harnesses, and fleet tooling for real-world vehicle testing and data-driven validation.</p>
+      </div>
+      <div class="contact">
+        <div>Los Angeles, CA (open to relocation)</div>
+        <div>Email: <a href="mailto:kumbhark@usc.edu">kumbhark@usc.edu</a></div>
+        <div>Phone: <a href="tel:+12132455814">+1 (213) 245-5814</a></div>
+        <div>LinkedIn: <a href="https://linkedin.com/in/kshitija-kumbharkar" target="_blank">kshitija-kumbharkar</a></div>
+      </div>
+    </header>
+
+    <main>
+      <!-- LEFT COLUMN -->
+      <div>
+        <section id="about">
+          <h2>About</h2>
+          <p>
+            I’m a mechanical engineer with 2+ years of experience across Porsche Engineering and Mercedes‑Benz R&D,
+            working on ADAS fleet tooling, test fixtures, and measurement data analysis.
+            I like turning ambiguous test needs into concrete hardware, models, and scripts that help teams debug systems faster.
+            I’m currently pursuing my M.S. in Engineering Management at USC and exploring roles in ADAS/vehicle test,
+            mechanical design, and test infrastructure.
+          </p>
+        </section>
+
+        <section id="projects">
+          <h2>Selected Projects</h2>
+
+          <div class="project">
+            <div class="project-title">Houston – ADAS Route & Fleet Tooling</div>
+            <div class="project-meta">Porsche Engineering · Python, GPX, Telemetry</div>
+            <ul>
+              <li>Developed Python-based GPX ingestion and QC tools to validate live tracking and weather overlays for ADAS test routes.</li>
+              <li>Added automated health checks for broken polylines and out-of-order timestamps, catching route/data issues early in testing.</li>
+              <li>Enabled validation teams to debug route problems faster and maintain consistent telemetry quality across the fleet.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <div class="project-title">ADAS Sensor-Mount Fixtures</div>
+            <div class="project-meta">Porsche Engineering · Fixtures & Test Plans</div>
+            <ul>
+              <li>Designed and documented sensor-mount fixture test plans and verification checklists for in-house fleet vehicles.</li>
+              <li>Coordinated sign-offs with cross-functional teams to release fixtures for manufacturing and lab use.</li>
+              <li>Standardized data and documentation so future tests could be reproduced with minimal setup questions.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <div class="project-title">EV Harness & Bracket Design</div>
+            <div class="project-meta">Mercedes-Benz R&amp;D India · UG-NX, GD&amp;T</div>
+            <ul>
+              <li>Designed harness layouts and mounting brackets in UG-NX for EV systems with GD&amp;T and tolerance stacks.</li>
+              <li>Verified clearances, routing, and fixture access on vehicles to support PV/DV builds.</li>
+              <li>Resolved integration issues through ECRs and updated fabrication-ready drawings.</li>
+            </ul>
+          </div>
+
+          <div class="project">
+            <div class="project-title">Formula Student – Chassis & Braking</div>
+            <div class="project-meta">Student Project · CAD, FEA, Testing</div>
+            <ul>
+              <li>Led chassis/brake design and created brackets and fixtures with basic FEA and tolerance checks.</li>
+              <li>Worked hands-on with the team to assemble and test the car.</li>
+              <li>Used Python, pandas, and GPX data to review run performance and iterate on setup.</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div>
+        <section id="experience">
+          <h2>Experience</h2>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <strong>Porsche Engineering Services</strong>
+              <span class="muted">Carson, CA · Jun 2025 – Present</span>
+            </div>
+            <div class="exp-role">ADAS Intern (L2++), Fleet & Test Data Tools</div>
+            <ul>
+              <li>Built Python-based GPX data ingestion and QC pipeline with dashboards to analyze route telemetry and validate live tracking and weather overlays.</li>
+              <li>Performed first-level analysis on ADAS fleet logs, applying FMEA with HW/SW teams to classify issues and feed CAPA and roadmap metrics.</li>
+              <li>Authored sensor-mount fixture test plans and verification checklists, standardizing data management for routing-app analytics and validation milestones.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <strong>Mercedes-Benz R&amp;D India</strong>
+              <span class="muted">Pune, India · Sep 2022 – Jul 2024</span>
+            </div>
+            <div class="exp-role">Product Design Engineer (EV Systems & Harness Integration)</div>
+            <ul>
+              <li>Designed wiring harness layouts and mounting brackets in UG-NX, using GD&amp;T and tolerance stacks to mitigate mis-seat/chafe risks.</li>
+              <li>Supported PV/DV build readiness by verifying routing clearances and fixture access and documenting corrective actions via ECRs.</li>
+              <li>Collaborated with cross-functional vehicle and manufacturing teams to align on release timelines and integration quality targets.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <strong>Dassault Systèmes</strong>
+              <span class="muted">Pune, India · Sep 2021 – Jul 2022</span>
+            </div>
+            <div class="exp-role">Design Intern (Simulation & Vehicle Dynamics)</div>
+            <ul>
+              <li>Developed suspension and steering models in CATIA + DYMOLA and correlated with ANSYS/FEA and MATLAB post-processing.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <strong>Cummins</strong>
+              <span class="muted">Pune, India · Jun 2021 – Sep 2021</span>
+            </div>
+            <div class="exp-role">Design Intern (Process Optimization & Test Support)</div>
+            <ul>
+              <li>Implemented fixture/process changes and safety automations in test cells, reducing operational risk and formalizing verification checklists.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="skills">
+          <h2>Skills</h2>
+          <div class="skills-list">
+            <div><strong>Mechanical & CAD:</strong> UG-NX, CATIA, SOLIDWORKS, brackets/enclosures, harness routing, fixtures, GD&amp;T, tolerance stacks.</div>
+            <div><strong>Test & Systems:</strong> Test fixtures, basic HIL concepts, PV/DV builds, checklists, sensor mounts, ECU/ADAS integration exposure.</div>
+            <div><strong>Data & Tools:</strong> Python (pandas, GPX ETL), Power BI, Excel macros, FMEA/RCA, CAPA, CANoe (working knowledge).</div>
+            <div><strong>Networks & Mechatronics:</strong> Basic CAN/LIN/FlexRay/Ethernet (OABR) concepts, understanding of sensors/actuators and lab setups.</div>
+          </div>
+        </section>
+
+        <section id="education">
+          <h2>Education</h2>
+          <div class="exp-item">
+            <div class="exp-header">
+              <strong>University of Southern California (USC)</strong>
+              <span class="muted">Los Angeles, CA</span>
+            </div>
+            <div class="exp-role">M.S., Engineering Management · GPA 3.85/4.00 · Aug 2024 – May 2026</div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <strong>Vishwakarma Institute of Technology</strong>
+              <span class="muted">India</span>
+            </div>
+            <div class="exp-role">B.Tech, Mechanical Engineering · GPA 4.00/4.00 · Aug 2019 – Jul 2022</div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Kshitija Sunil Kumbharkar · Built with GitHub Pages.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
