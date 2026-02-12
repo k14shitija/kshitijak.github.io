@@ -83,4 +83,571 @@
 
     /* HEADER */
 
-    head
+    header {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.4fr);
+      gap: 26px;
+      margin-bottom: 40px;
+      padding: 22px 24px 22px;
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at top left, #0f172a 0, #020617 55%);
+      border: 1px solid rgba(15,23,42,0.9);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    @media (max-width: 820px) {
+      header { grid-template-columns: 1fr; }
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 260px;
+      height: 260px;
+      border-radius: 48% 52% 60% 40%;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(56,189,248,0.9) 0, transparent 45%),
+        radial-gradient(circle at 70% 70%, rgba(59,130,246,0.85) 0, transparent 60%);
+      opacity: 0.32;
+      filter: blur(2px);
+    }
+
+    .tagline {
+      color: var(--accent);
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      letter-spacing: 0.04em;
+    }
+
+    .subtitle {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 6px 11px;
+      font-size: 0.78rem;
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(148,163,184,0.5);
+      color: var(--muted);
+    }
+
+    .hero-badge span { margin-right: 6px; }
+
+    .hero-actions {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.18s, border-color 0.18s, transform 0.18s, box-shadow 0.18s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #020617;
+      border-color: rgba(15,23,42,0.9);
+      box-shadow: 0 16px 40px rgba(8,47,73,0.9);
+    }
+
+    .btn-primary:hover {
+      background: #0ea5e9;
+      transform: translateY(-1px);
+      box-shadow: 0 20px 48px rgba(8,47,73,1);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border-color: rgba(148,163,184,0.7);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      background: rgba(15,23,42,0.9);
+    }
+
+    .contact {
+      text-align: right;
+      font-size: 0.9rem;
+      color: var(--muted);
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (max-width: 820px) {
+      .contact { text-align: left; }
+    }
+
+    .contact div { margin-bottom: 3px; }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact a:hover { text-decoration: underline; }
+
+    .hero-car {
+      position: absolute;
+      right: 70px;
+      top: 56px;
+      width: 86px;
+      height: 38px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #020617, #1f2937);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e5f0ff;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.9);
+    }
+
+    .hero-car::before,
+    .hero-car::after {
+      content: "";
+      position: absolute;
+      bottom: -9px;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: #020617;
+      box-shadow: 40px 0 0 #020617;
+    }
+
+    .hero-car-road {
+      position: absolute;
+      right: 40px;
+      top: 108px;
+      width: 160px;
+      height: 2px;
+      border-radius: 999px;
+      background-image: linear-gradient(90deg, rgba(148,163,184,0.9) 50%, transparent 50%);
+      background-size: 18px 2px;
+      opacity: 0.7;
+    }
+
+    /* LAYOUT */
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 1.85fr) minmax(0, 1.35fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 900px) {
+      main { grid-template-columns: 1fr; }
+    }
+
+    section {
+      margin-bottom: 20px;
+      background: radial-gradient(circle at top left, #020617 0, #020617 65%);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      padding: 16px 18px 14px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.7);
+    }
+
+    h2 {
+      font-size: 0.88rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    p { font-size: 0.93rem; }
+
+    .muted { color: var(--muted); font-size: 0.9rem; }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .pill {
+      border-radius: 999px;
+      border: 1px solid #1f2937;
+      padding: 5px 10px;
+      font-size: 0.78rem;
+      background: #020617;
+      color: var(--muted);
+    }
+
+    /* PROJECTS */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width: 720px) {
+      .projects-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    .project-card {
+      position: relative;
+      padding: 12px 12px 10px;
+      border-radius: 14px;
+      border: 1px solid #1f2937;
+      background: radial-gradient(circle at top left, #020617 0, #020617 60%);
+      overflow: hidden;
+      cursor: default;
+      transition: transform 0.18s, box-shadow 0.18s, border-color 0.18s, background 0.18s;
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      right: -36px;
+      top: -36px;
+      width: 96px;
+      height: 96px;
+      border-radius: 40%;
+      background: radial-gradient(circle at 20% 20%, rgba(56,189,248,0.4), transparent 68%);
+      opacity: 0;
+      transition: opacity 0.18s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 24px 55px rgba(0,0,0,0.95);
+      border-color: var(--accent-soft-2);
+      background: radial-gradient(circle at top left, #020617 0, #020617 75%);
+    }
+
+    .project-card:hover::before { opacity: 1; }
+
+    .project-title-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+
+    .project-title {
+      font-size: 0.96rem;
+      font-weight: 600;
+    }
+
+    .project-icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 9px;
+      background: rgba(15,23,42,0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      border: 1px solid rgba(148,163,184,0.7);
+    }
+
+    .project-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .project-card ul { list-style: disc; margin-left: 16px; }
+
+    .project-card li {
+      font-size: 0.88rem;
+      margin-bottom: 3px;
+    }
+
+    /* EXPERIENCE */
+
+    .exp-item { margin-bottom: 12px; }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      font-size: 0.86rem;
+      margin-bottom: 2px;
+    }
+
+    .exp-role {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 3px;
+    }
+
+    .exp-item ul { list-style: disc; margin-left: 16px; }
+
+    .exp-item li {
+      font-size: 0.88rem;
+      margin-bottom: 3px;
+    }
+
+    /* SKILLS */
+
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.9rem;
+    }
+
+    .skills-list strong { font-weight: 600; }
+
+    /* FOOTER */
+
+    footer {
+      max-width: 1040px;
+      margin: 22px auto 0;
+      padding-top: 12px;
+      border-top: 1px solid #020617;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="watermark">
+    <span class="porsche">PORSCHE</span>
+    <span class="mercedes">MERCEDES‑BENZ</span>
+  </div>
+
+  <div class="page">
+    <header>
+      <div>
+        <div class="tagline">Mechanical & ADAS Engineer</div>
+        <h1>Kshitija Sunil Kumbharkar</h1>
+        <p class="subtitle">
+          Designing fixtures, harnesses, and fleet tooling for real‑world vehicle testing and data‑driven validation.
+        </p>
+        <div class="hero-badges">
+          <div class="hero-badge"><span>🚗</span>ADAS & fleet tooling</div>
+          <div class="hero-badge"><span>📊</span>Test data & KPIs</div>
+          <div class="hero-badge"><span>🛠</span>CAD & fixtures</div>
+        </div>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener">⬇ Download Resume</a>
+          <a class="btn btn-outline" href="#projects">View projects</a>
+        </div>
+      </div>
+
+      <div class="contact">
+        <div>Los Angeles, CA · Open to relocation</div>
+        <div>Email: <a href="mailto:kumbhark@usc.edu">kumbhark@usc.edu</a></div>
+        <div>Phone: <a href="tel:+12132455814">+1 (213) 245‑5814</a></div>
+        <div>LinkedIn: <a href="https://linkedin.com/in/kshitija-kumbharkar" target="_blank">kshitija‑kumbharkar</a></div>
+      </div>
+
+      <div class="hero-car">ADAS</div>
+      <div class="hero-car-road"></div>
+    </header>
+
+    <main>
+      <div>
+        <section id="about">
+          <h2>About</h2>
+          <p>
+            I’m a mechanical engineer with 2+ years of experience across Porsche Engineering and Mercedes‑Benz R&amp;D,
+            working on ADAS fleet tooling, test fixtures, and measurement data analysis.
+            I like turning ambiguous test needs into concrete hardware, models, and scripts that help teams debug systems faster.
+            I’m currently pursuing my M.S. in Engineering Management at USC and exploring roles in ADAS/vehicle test,
+            mechanical design, and test infrastructure.
+          </p>
+          <div class="pill-row">
+            <div class="pill">Porsche Engineering · ADAS Intern</div>
+            <div class="pill">Mercedes‑Benz R&amp;D · EV Systems</div>
+            <div class="pill">USC · Engineering Management</div>
+          </div>
+        </section>
+
+        <section id="projects">
+          <h2>Selected Projects</h2>
+          <div class="projects-grid">
+            <div class="project-card">
+              <div class="project-title-row">
+                <div class="project-title">Houston – ADAS Route & Fleet Tooling</div>
+                <div class="project-icon">🛰️</div>
+              </div>
+              <div class="project-meta">Porsche Engineering · Python, GPX, Telemetry</div>
+              <ul>
+                <li>Developed Python‑based GPX ingestion and QC tools to validate live tracking and weather overlays for ADAS test routes.</li>
+                <li>Added automated health checks for broken polylines and out‑of‑order timestamps, catching route/data issues early.</li>
+                <li>Helped validation teams debug route behavior faster and maintain consistent telemetry quality across the fleet.</li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-title-row">
+                <div class="project-title">ADAS Sensor‑Mount Fixtures</div>
+                <div class="project-icon">🔩</div>
+              </div>
+              <div class="project-meta">Porsche Engineering · Fixtures & Test Plans</div>
+              <ul>
+                <li>Designed and documented sensor‑mount fixture test plans and verification checklists for in‑house fleet vehicles.</li>
+                <li>Coordinated sign‑offs with cross‑functional teams to release fixtures for manufacturing and lab use.</li>
+                <li>Standardized data and documentation so future tests could be reproduced with minimal setup questions.</li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-title-row">
+                <div class="project-title">EV Harness & Bracket Design</div>
+                <div class="project-icon">⚙️</div>
+              </div>
+              <div class="project-meta">Mercedes‑Benz R&amp;D India · UG‑NX, GD&amp;T</div>
+              <ul>
+                <li>Designed harness layouts and mounting brackets in UG‑NX for EV systems with GD&amp;T and tolerance stacks.</li>
+                <li>Verified clearances, routing, and fixture access on vehicles to support PV/DV builds.</li>
+                <li>Resolved integration issues through ECRs and updated fabrication‑ready drawings.</li>
+              </ul>
+            </div>
+
+            <div class="project-card">
+              <div class="project-title-row">
+                <div class="project-title">Formula Student – Chassis & Braking</div>
+                <div class="project-icon">🏎️</div>
+              </div>
+              <div class="project-meta">Student Project · CAD, FEA, Testing</div>
+              <ul>
+                <li>Led chassis/brake design and created brackets and fixtures with basic FEA and tolerance checks.</li>
+                <li>Worked hands‑on with the team to assemble and test the car.</li>
+                <li>Used Python, pandas, and GPX data to review run performance and iterate on setup.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div>
+        <section id="experience">
+          <h2>Experience</h2>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <strong>Porsche Engineering Services</strong>
+              <span class="muted">Carson, CA · Jun 2025 – Present</span>
+            </div>
+            <div class="exp-role">ADAS Intern (L2++), Fleet & Test Data Tools</div>
+            <ul>
+              <li>Built a Python‑based GPX data ingestion and QC pipeline with dashboards to analyze route telemetry and validate live tracking and weather overlays.</li>
+              <li>Performed first‑level analysis on ADAS fleet logs, applying FMEA with HW/SW teams to classify issues and feed CAPA and roadmap metrics.</li>
+              <li>Authored sensor‑mount fixture test plans and verification checklists, standardizing data management for routing‑app analytics and validation milestones.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <strong>Mercedes‑Benz R&amp;D India</strong>
+              <span class="muted">Pune, India · Sep 2022 – Jul 2024</span>
+            </div>
+            <div class="exp-role">Product Design Engineer (EV Systems & Harness Integration)</div>
+            <ul>
+              <li>Designed wiring harness layouts and mounting brackets in UG‑NX, using GD&amp;T and tolerance stacks to mitigate mis‑seat/chafe risks.</li>
+              <li>Supported PV/DV build readiness by verifying routing clearances and fixture access and documenting corrective actions via ECRs.</li>
+              <li>Collaborated with cross‑functional vehicle and manufacturing teams to align on release timelines and integration quality targets.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <strong>Dassault Systèmes</strong>
+              <span class="muted">Pune, India · Sep 2021 – Jul 2022</span>
+            </div>
+            <div class="exp-role">Design Intern (Simulation & Vehicle Dynamics)</div>
+            <ul>
+              <li>Developed suspension and steering models in CATIA + DYMOLA and correlated with ANSYS/FEA and MATLAB post‑processing.</li>
+            </ul>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <strong>Cummins</strong>
+              <span class="muted">Pune, India · Jun 2021 – Sep 2021</span>
+            </div>
+            <div class="exp-role">Design Intern (Process Optimization & Test Support)</div>
+            <ul>
+              <li>Implemented fixture/process changes and safety automations in test cells, reducing operational risk and formalizing verification checklists.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="skills">
+          <h2>Skills</h2>
+          <div class="skills-list">
+            <div><strong>Mechanical & CAD:</strong> UG‑NX, CATIA, SOLIDWORKS, brackets/enclosures, harness routing, fixtures, GD&amp;T, tolerance stacks.</div>
+            <div><strong>Test & Systems:</strong> Test fixtures, basic HIL concepts, PV/DV builds, checklists, sensor mounts, ECU/ADAS integration exposure.</div>
+            <div><strong>Data & Tools:</strong> Python (pandas, GPX ETL), Power BI, Excel macros, FMEA/RCA, CAPA, CANoe (working knowledge).</div>
+            <div><strong>Networks & Mechatronics:</strong> Basic CAN/LIN/FlexRay/Ethernet (OABR) concepts, understanding of sensors/actuators and lab setups.</div>
+          </div>
+        </section>
+
+        <section id="education">
+          <h2>Education</h2>
+          <div class="exp-item">
+            <div class="exp-header">
+              <strong>University of Southern California (USC)</strong>
+              <span class="muted">Los Angeles, CA</span>
+            </div>
+            <div class="exp-role">M.S., Engineering Management · GPA 3.85/4.00 · Aug 2024 – May 2026</div>
+          </div>
+
+          <div class="exp-item">
+            <div class="exp-header">
+              <strong>Vishwakarma Institute of Technology</strong>
+              <span class="muted">India</span>
+            </div>
+            <div class="exp-role">B.Tech, Mechanical Engineering · GPA 4.00/4.00 · Aug 2019 – Jul 2022</div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Kshitija Sunil Kumbharkar · Built on GitHub Pages.
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
