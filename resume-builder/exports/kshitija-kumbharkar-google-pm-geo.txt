@@ -1,0 +1,36 @@
+Kshitija Sunil Kumbharkar
+Product-minded engineer for geospatial, ADAS, and auto data products
+Los Angeles, CA | Open to Mountain View, CA | 213-245-5814 | kumbhark@usc.edu | linkedin.com/in/kshitija-kumbharkar
+
+SUMMARY
+Mechanical engineer moving into product management for geospatial and ADAS data. At Porsche Engineering I took a technical product from conception to launch: a Python GPX quality pipeline for road-test telemetry. At Mercedes-Benz R&D I delivered EV integration with cross-functional vehicle and manufacturing teams. Comfortable with Python, self-directed data analysis, and sitting with engineering and operations on quality evaluation for vehicle and route data. M.S. Engineering Management, USC.
+
+SKILLS
+Product: product management for 0 to 1 technical products (conception to launch), quality evaluation and quality standards, product roadmap metrics, cross-functional delivery, FMEA, CAPA
+Data: Python, pandas, GPX, geospatial datasets, driving telemetry, Power BI, Excel, self-directed data analysis
+Domain: ADAS, road network test routes, vehicle sensor mounts, auto OEM, consumer navigation, EV systems
+
+EXPERIENCE
+
+Porsche Engineering Services | Jun 2025 - Present
+ADAS Intern, Fleet and Test Data Tools | Carson, CA
+- When ADAS test routes kept dropping live tracking on broken GPX polylines and out-of-order timestamps, I scoped a Python ingest and QC pipeline, added health checks and dashboards, and used those quality flags with hardware and software teams so validation could trust fleet telemetry and weather overlays.
+- Sensor-mount records differed by vehicle, so I wrote fixture test plans and checklists, ran FMEA with hardware and software, and turned classified issues into CAPA and roadmap metrics the team used to pick fixes before the next test window.
+
+Mercedes-Benz R&D India | Sep 2022 - Jul 2024
+Product Design Engineer, EV Systems and Harness Integration | Pune, India
+- EV harness layouts were blocking PV/DV, so I owned the UG-NX design, GD&T, and clearance checks, ran ECRs with vehicle and manufacturing teams, and released fabrication-ready drawings on the build calendar.
+
+Dassault Systemes | Sep 2021 - Jul 2022
+Design Intern, Simulation and Vehicle Dynamics | Pune, India
+
+Cummins | Jun 2021 - Sep 2021
+Design Intern, Process Optimization and Test Support | Pune, India
+
+EDUCATION
+
+University of Southern California | Aug 2024 - May 2026
+M.S., Engineering Management | Los Angeles, CA | GPA 3.85/4.00
+
+Vishwakarma Institute of Technology | Aug 2019 - Jul 2022
+B.Tech, Mechanical Engineering | India | GPA 4.00/4.00

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ATS Resume Builder | Google PM Geo Roads</title>
+  <link rel="stylesheet" href="css/builder.css" />
+  <link rel="stylesheet" href="css/resume.css" />
+</head>
+<body class="app">
+  <div class="app-shell">
+    <aside class="sidebar no-print">
+      <h1>ATS Resume Builder</h1>
+      <p class="lede">
+        First project: a one-column Google PM resume. Max three STAR bullets.
+        No watermark layer, no hidden text, no generator punctuation.
+      </p>
+      <p class="lede" id="template-label"></p>
+
+      <div class="score-row">
+        <div class="score-card"><span>ATS score</span><strong id="score-overall">--</strong></div>
+        <div class="score-card"><span>Keywords</span><strong id="score-keywords">--</strong></div>
+        <div class="score-card"><span>Checks</span><strong id="score-checks">--</strong></div>
+      </div>
+
+      <div class="actions">
+        <button class="primary" id="btn-print" type="button">Print / Save PDF</button>
+        <button id="btn-txt" type="button">Download .txt</button>
+        <button id="btn-html" type="button">Download .html</button>
+        <button id="btn-reset" type="button">Reset template</button>
+      </div>
+      <p class="note">
+        Use Print / Save PDF with the system dialog. Choose Letter, no headers or footers.
+        Paste the .txt file into Workday if a parser eats the PDF.
+      </p>
+
+      <div class="section-title">ATS checks</div>
+      <ul class="check-list" id="checks"></ul>
+
+      <div class="section-title">JD keywords</div>
+      <ul class="kw-list" id="keywords"></ul>
+
+      <div class="section-title">Contact</div>
+      <label for="field-name">Name</label>
+      <input id="field-name" autocomplete="name" />
+      <label for="field-headline">Headline</label>
+      <input id="field-headline" />
+      <label for="field-location">Location</label>
+      <input id="field-location" />
+      <label for="field-relocation">Relocation</label>
+      <input id="field-relocation" />
+      <label for="field-phone">Phone</label>
+      <input id="field-phone" />
+      <label for="field-email">Email</label>
+      <input id="field-email" />
+      <label for="field-linkedin">LinkedIn</label>
+      <input id="field-linkedin" />
+
+      <div class="section-title">Summary</div>
+      <label for="field-summary">Plain summary, no bullets</label>
+      <textarea id="field-summary"></textarea>
+
+      <div class="section-title">Skills</div>
+      <label for="field-skill-product">Product</label>
+      <textarea id="field-skill-product"></textarea>
+      <label for="field-skill-data">Data</label>
+      <textarea id="field-skill-data"></textarea>
+      <label for="field-skill-domain">Domain</label>
+      <textarea id="field-skill-domain"></textarea>
+      <p class="note">
+        SQL is left off unless you use it at work. Add it here if that is true.
+        Do not add machine learning deployment unless you shipped a model.
+      </p>
+
+      <div class="section-title">Roles</div>
+      <div id="jobs"></div>
+
+      <div class="section-title">STAR bullets (max 3)</div>
+      <div id="stars"></div>
+      <button id="add-star" type="button">Add STAR bullet</button>
+      <p class="note">
+        Recruiters read the compiled sentence. Keep STAR in the editor so the bullet
+        still has situation, task, action, and a result, without S/T/A/R labels on the page.
+      </p>
+    </aside>
+
+    <main class="stage">
+      <p class="hint no-print">
+        Preview is the file Google ATS should parse: one column, Calibri, standard headings, three bullets.
+      </p>
+      <div class="paper" id="preview"></div>
+    </main>
+  </div>
+
+  <script src="data/google-pm-geo.js"></script>
+  <script src="js/ats.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
