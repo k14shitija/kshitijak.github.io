@@ -27,6 +27,19 @@
     });
   }
 
+  function lineTable(leftStrong, leftPlain, right) {
+    var left = leftStrong
+      ? "<strong>" + esc(leftStrong) + "</strong>" + (leftPlain ? " - " + esc(leftPlain) : "")
+      : esc(leftPlain || "");
+    return (
+      "<table class=\"line\"><tr><td>" +
+      left +
+      '</td><td class="right">' +
+      esc(right || "") +
+      "</td></tr></table>"
+    );
+  }
+
   function renderExperience(resume) {
     return (resume.experience || []).map(function (job, index) {
       var items = bulletsForJob(resume, index);
@@ -43,15 +56,18 @@
       }
       return (
         '<div class="job">' +
-        "<p><strong>" +
-        esc(job.company) +
-        "</strong> | " +
-        esc(job.dates) +
-        "</p>" +
-        '<p class="job-role">' +
-        esc(job.role) +
-        (job.location ? " | " + esc(job.location) : "") +
-        "</p>" +
+        lineTable(
+          window.ATS.sanitizeForExport(job.company),
+          window.ATS.sanitizeForExport(job.role),
+          window.ATS.sanitizeForExport(job.dates)
+        ) +
+        (job.subtitle || job.location
+          ? '<table class="line"><tr><td class="job-sub">' +
+            esc(window.ATS.sanitizeForExport(job.subtitle || "")) +
+            '</td><td class="right">' +
+            esc(window.ATS.sanitizeForExport(job.location || "")) +
+            "</td></tr></table>"
+          : "") +
         list +
         "</div>"
       );
@@ -59,22 +75,27 @@
   }
 
   function renderEducation(resume) {
-    return (resume.education || []).map(function (ed) {
-      return (
-        '<div class="job">' +
-        "<p><strong>" +
-        esc(ed.school) +
-        "</strong> | " +
-        esc(ed.dates) +
-        "</p>" +
-        '<p class="job-role">' +
-        esc(ed.degree) +
-        (ed.location ? " | " + esc(ed.location) : "") +
-        (ed.detail ? " | " + esc(ed.detail) : "") +
-        "</p>" +
-        "</div>"
-      );
-    }).join("");
+    return (
+      '<table class="line">' +
+      (resume.education || [])
+        .map(function (ed) {
+          var left =
+            "<strong>" +
+            esc(window.ATS.sanitizeForExport(ed.school)) +
+            "</strong> - " +
+            esc(window.ATS.sanitizeForExport(ed.degree)) +
+            (ed.detail ? " | " + esc(window.ATS.sanitizeForExport(ed.detail)) : "");
+          return (
+            "<tr><td>" +
+            left +
+            '</td><td class="right">' +
+            esc(window.ATS.sanitizeForExport(ed.dates)) +
+            "</td></tr>"
+          );
+        })
+        .join("") +
+      "</table>"
+    );
   }
 
   function renderProjects(resume) {
@@ -83,22 +104,16 @@
     });
     if (!projects.length) return "";
     return (
-      "<section><h2>Projects</h2>" +
+      "<section><h2>Projects &amp; Leadership</h2>" +
       projects
         .map(function (p) {
-          var meta = [p.context, p.tools]
-            .filter(function (v) { return String(v || "").trim(); })
-            .map(function (v) { return window.ATS.sanitizeForExport(v); })
-            .join(" | ");
           return (
             '<div class="job">' +
             "<p><strong>" +
             esc(window.ATS.sanitizeForExport(p.name)) +
-            "</strong>" +
-            (meta ? " | " + esc(meta) : "") +
-            "</p>" +
+            "</strong></p>" +
             (p.line
-              ? "<p>" + esc(window.ATS.sanitizeForExport(p.line)) + "</p>"
+              ? "<ul><li>" + esc(window.ATS.sanitizeForExport(p.line)) + "</li></ul>"
               : "") +
             "</div>"
           );
@@ -109,13 +124,7 @@
   }
 
   function renderHtml(resume) {
-    var contact = [
-      resume.location,
-      resume.relocation,
-      resume.phone,
-      resume.email,
-      resume.linkedin
-    ]
+    var contact = [resume.location, resume.email, resume.phone, resume.linkedin]
       .filter(Boolean)
       .map(function (v) { return window.ATS.sanitizeForExport(v); })
       .join(" | ");
@@ -126,17 +135,14 @@
       "<h1>" +
       esc(window.ATS.sanitizeForExport(resume.name)) +
       "</h1>" +
-      (resume.headline
-        ? '<p class="headline">' + esc(window.ATS.sanitizeForExport(resume.headline)) + "</p>"
-        : "") +
       '<p class="contact">' +
       esc(contact) +
       "</p>" +
       "</header>" +
-      "<section><h2>Skills</h2>" +
+      "<section><h2>Technical Expertise</h2>" +
       skillRows(resume.skills) +
       "</section>" +
-      "<section><h2>Experience</h2>" +
+      "<section><h2>Professional Experience</h2>" +
       renderExperience(resume) +
       "</section>" +
       renderProjects(resume) +
@@ -149,34 +155,36 @@
 
   function renderText(resume) {
     var lines = [];
-    lines.push(window.ATS.sanitizeForExport(resume.name));
-    if (resume.headline) lines.push(window.ATS.sanitizeForExport(resume.headline));
+    lines.push(window.ATS.sanitizeForExport(resume.name).toUpperCase());
     lines.push(
-      [
-        resume.location,
-        resume.relocation,
-        resume.phone,
-        resume.email,
-        resume.linkedin
-      ]
+      [resume.location, resume.email, resume.phone, resume.linkedin]
         .filter(Boolean)
         .map(window.ATS.sanitizeForExport)
         .join(" | ")
     );
     lines.push("");
-    lines.push("SKILLS");
+    lines.push("TECHNICAL EXPERTISE");
     Object.keys(resume.skills || {}).forEach(function (label) {
       lines.push(label + ": " + window.ATS.sanitizeForExport(resume.skills[label]));
     });
     lines.push("");
-    lines.push("EXPERIENCE");
+    lines.push("PROFESSIONAL EXPERIENCE");
     (resume.experience || []).forEach(function (job, index) {
       lines.push("");
-      lines.push(window.ATS.sanitizeForExport(job.company) + " | " + window.ATS.sanitizeForExport(job.dates));
       lines.push(
-        window.ATS.sanitizeForExport(job.role) +
-          (job.location ? " | " + window.ATS.sanitizeForExport(job.location) : "")
+        window.ATS.sanitizeForExport(job.company) +
+          " - " +
+          window.ATS.sanitizeForExport(job.role) +
+          "\t" +
+          window.ATS.sanitizeForExport(job.dates)
       );
+      if (job.subtitle || job.location) {
+        lines.push(
+          window.ATS.sanitizeForExport(job.subtitle || "") +
+            "\t" +
+            window.ATS.sanitizeForExport(job.location || "")
+        );
+      }
       (resume.bullets || [])
         .filter(function (b) { return Number(b.experienceIndex) === index; })
         .forEach(function (b) {
@@ -188,32 +196,23 @@
     });
     if (projects.length) {
       lines.push("");
-      lines.push("PROJECTS");
+      lines.push("PROJECTS & LEADERSHIP");
       projects.forEach(function (p) {
-        var meta = [p.context, p.tools]
-          .filter(function (v) { return String(v || "").trim(); })
-          .map(window.ATS.sanitizeForExport)
-          .join(" | ");
         lines.push("");
-        lines.push(
-          window.ATS.sanitizeForExport(p.name) + (meta ? " | " + meta : "")
-        );
-        if (p.line) lines.push(window.ATS.sanitizeForExport(p.line));
+        lines.push(window.ATS.sanitizeForExport(p.name));
+        if (p.line) lines.push("- " + window.ATS.sanitizeForExport(p.line));
       });
     }
     lines.push("");
     lines.push("EDUCATION");
     (resume.education || []).forEach(function (ed) {
-      lines.push("");
-      lines.push(window.ATS.sanitizeForExport(ed.school) + " | " + window.ATS.sanitizeForExport(ed.dates));
       lines.push(
-        [
-          window.ATS.sanitizeForExport(ed.degree),
-          window.ATS.sanitizeForExport(ed.location),
-          window.ATS.sanitizeForExport(ed.detail)
-        ]
-          .filter(Boolean)
-          .join(" | ")
+        window.ATS.sanitizeForExport(ed.school) +
+          " - " +
+          window.ATS.sanitizeForExport(ed.degree) +
+          (ed.detail ? " | " + window.ATS.sanitizeForExport(ed.detail) : "") +
+          "\t" +
+          window.ATS.sanitizeForExport(ed.dates)
       );
     });
     return lines.join("\n") + "\n";

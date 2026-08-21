@@ -1,44 +1,34 @@
-Kshitija Sunil Kumbharkar
-Product-minded engineer for geospatial, ADAS, and auto data products
-Los Angeles, CA | Open to Mountain View, CA | 213-245-5814 | kumbhark@usc.edu | linkedin.com/in/kshitija-kumbharkar
+KSHITIJA KUMBHARKAR
+Los Angeles, CA | kumbharkarkshitija14@gmail.com | (213) 245-5814 | linkedin.com/in/kshitija-kumbharkar
 
-SKILLS
-Product: product management for 0 to 1 technical products (conception to launch), quality evaluation and quality standards, product roadmap metrics, cross-functional delivery with engineering and operations, FMEA, CAPA
-Data: Python, pandas, GPX, geospatial datasets, driving telemetry, Power BI, Excel, self-directed data analysis
-Domain: ADAS, road network test routes, vehicle sensor mounts, auto OEM, consumer navigation, EV systems
+TECHNICAL EXPERTISE
+Product: product management for 0 to 1 technical products (conception to launch), quality evaluation, quality standards, product roadmap metrics, cross-functional delivery with engineering and operations
+Data: Python, geospatial datasets, driving telemetry, GPX, Excel, self-directed data analysis
+Domain: ADAS, road network validation, vehicle sensor data, auto OEM, consumer navigation, EV wire-harness integration
+Design & CAD: Siemens NX (UG-NX), CATIA V5, SolidWorks, GD&T, DFMEA, ECR/CN, PPAP/FAI
 
-EXPERIENCE
+PROFESSIONAL EXPERIENCE
 
-Porsche Engineering Services | Jun 2025 - Present
-ADAS Intern, Fleet and Test Data Tools | Carson, CA
-- When ADAS test routes kept dropping live tracking on broken GPX polylines and out-of-order timestamps, I scoped a Python ingest and QC pipeline, added health checks and dashboards, and used those quality flags with hardware and software teams so validation could trust fleet telemetry and weather overlays.
-- Sensor-mount records differed by vehicle, so I wrote fixture test plans and checklists, ran FMEA with hardware and software, and turned classified issues into CAPA and roadmap metrics the team used to pick fixes before the next test window.
+Porsche Engineering Services North America - Engineering Intern	Jun 2025 - May 2026
+ADAS Validation Platform, Data & Vehicle Integration	Carson, CA
+- When ADAS validation was a 4-hour manual cycle, I built a geospatial vehicle-data platform in Python, cut the core cycle to 25 minutes, and used the output with engineering and operations so fleet telemetry and route tracking could be trusted.
+- The program was a 10-vehicle pilot, so I defined routing and test-execution, scaled data capture to a 50-vehicle fleet, and held quality against a 98% CARIAD target.
 
-Mercedes-Benz R&D India | Sep 2022 - Jul 2024
-Product Design Engineer, EV Systems and Harness Integration | Pune, India
-- EV harness layouts were blocking PV/DV, so I owned the UG-NX design, GD&T, and clearance checks, ran ECRs with vehicle and manufacturing teams, and released fabrication-ready drawings on the build calendar.
+Mercedes-Benz R&D India - Product Design Engineer	Sep 2022 - Jul 2024
+EV Wire-Harness & Electromechanical Integration	Pune, India
+- CLA rear-end harness integration was blocking production release, so I owned Siemens NX routing, packaging, and GD&T drawings, ran DFMEA and ECR/CN updates, and cleared PPAP/FAI with Kroschu in Germany.
 
-Dassault Systemes | Sep 2021 - Jul 2022
-Design Intern, Simulation and Vehicle Dynamics | Pune, India
+Cummins - Design Intern, Engine Test & Validation	Jun 2021 - Sep 2021
+Durability & Validation Support	Pune, India
 
-Cummins | Jun 2021 - Sep 2021
-Design Intern, Process Optimization and Test Support | Pune, India
+PROJECTS & LEADERSHIP
 
-PROJECTS
+Audio PCBA Enclosure - Electronics Packaging (SolidWorks)
+- Reverse-engineered a connector-dense audio PCBA with calipers and designed an injection-moldable enclosure with board-retention bosses, connector clearances, and port cutouts.
 
-Houston ADAS Route and Fleet Tooling | Porsche Engineering | Python, GPX, telemetry
-Built GPX ingest and QC for the Houston fleet, including polyline and timestamp checks, so live tracking and weather overlays stayed usable on ADAS test routes.
-
-ADAS Sensor-Mount Fixtures | Porsche Engineering | test plans, verification checklists
-Wrote sensor-mount fixture test plans and sign-off checklists so fleet vehicles could be instrumented the same way before a route.
-
-Formula Student Chassis and Braking | Student project | CAD, FEA, Python, GPX
-Led chassis and brake design, then used pandas and GPX run files to review test-day performance with the team.
+Formula Student, Veloce Racing - Chassis & Braking Lead
+- Performed structural FEA on chassis components under dynamic load cases, evaluated forged-material selection for fatigue life, and validated tolerance stack-ups during system integration.
 
 EDUCATION
-
-University of Southern California | Aug 2024 - May 2026
-M.S., Engineering Management | Los Angeles, CA | GPA 3.85/4.00
-
-Vishwakarma Institute of Technology | Aug 2019 - Jul 2022
-B.Tech, Mechanical Engineering | India | GPA 4.00/4.00
+University of Southern California - M.S, Engineering Management | GPA: 3.85/4.0	May 2026
+Vishwakarma Institute of Technology - B.Tech, Mechanical Engineering	May 2022
