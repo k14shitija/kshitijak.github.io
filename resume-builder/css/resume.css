@@ -1,0 +1,103 @@
+.ats-resume {
+  font-family: Calibri, "Segoe UI", Arial, Helvetica, sans-serif;
+  font-size: 11pt;
+  line-height: 1.28;
+  color: #111111;
+  background: #ffffff;
+  padding: 0.65in 0.7in;
+  max-width: 8.5in;
+}
+
+.ats-resume h1 {
+  margin: 0 0 2px;
+  font-size: 18pt;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: #111111;
+}
+
+.ats-resume .headline {
+  margin: 0 0 4px;
+  text-align: center;
+  font-size: 11pt;
+  color: #222222;
+}
+
+.ats-resume .contact {
+  margin: 0 0 12px;
+  text-align: center;
+  font-size: 10pt;
+  color: #222222;
+}
+
+.ats-resume h2 {
+  margin: 11px 0 5px;
+  font-size: 12pt;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #222222;
+  padding-bottom: 2px;
+  color: #111111;
+}
+
+.ats-resume p {
+  margin: 0 0 4px;
+}
+
+.ats-resume .skill-row {
+  margin: 0 0 3px;
+}
+
+.ats-resume .skill-label {
+  font-weight: 700;
+}
+
+.ats-resume .job {
+  margin: 0 0 8px;
+}
+
+.ats-resume .job-role,
+.ats-resume .muted {
+  color: #222222;
+}
+
+.ats-resume ul {
+  margin: 4px 0 0;
+  padding-left: 18px;
+}
+
+.ats-resume li {
+  margin: 0 0 4px;
+}
+
+@media print {
+  html, body {
+    background: #ffffff !important;
+    margin: 0;
+  }
+
+  .sidebar, .hint, .actions, .no-print {
+    display: none !important;
+  }
+
+  .stage {
+    padding: 0;
+  }
+
+  .paper, .ats-resume {
+    box-shadow: none;
+    width: auto;
+    max-width: none;
+  }
+
+  @page {
+    size: letter;
+    margin: 0.5in;
+  }
+
+  .ats-resume {
+    padding: 0;
+  }
+}
