@@ -36,8 +36,7 @@
       resume.relocation,
       resume.phone,
       resume.email,
-      resume.linkedin,
-      resume.summary
+      resume.linkedin
     ];
     Object.keys(resume.skills || {}).forEach(function (key) {
       parts.push(key, resume.skills[key]);
@@ -128,6 +127,13 @@
       ok: hasName,
       label: "Contact line",
       detail: hasName ? "Name, email, and phone are present." : "ATS needs name, email, and phone in plain text."
+    });
+
+    var hasSummary = !!String(resume.summary || "").trim();
+    checks.push({
+      ok: !hasSummary,
+      label: "No summary",
+      detail: hasSummary ? "Remove the summary. Recruiters and ATS get Skills, Experience, and Education only." : "No summary block."
     });
 
     var hasEdu = (resume.education || []).some(function (ed) {

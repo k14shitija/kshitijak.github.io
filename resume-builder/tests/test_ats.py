@@ -97,7 +97,8 @@ def test_export_is_ats_clean():
     lower = text.lower()
     for phrase in AI_PHRASES:
         assert phrase not in lower, phrase
-    assert "Summary" in html
+    assert "Summary" not in html
+    assert "SUMMARY" not in text
     assert "Experience" in html
     assert "Education" in html
     assert "Skills" in html

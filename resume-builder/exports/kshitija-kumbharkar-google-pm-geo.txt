@@ -2,11 +2,8 @@ Kshitija Sunil Kumbharkar
 Product-minded engineer for geospatial, ADAS, and auto data products
 Los Angeles, CA | Open to Mountain View, CA | 213-245-5814 | kumbhark@usc.edu | linkedin.com/in/kshitija-kumbharkar
 
-SUMMARY
-Mechanical engineer moving into product management for geospatial and ADAS data. At Porsche Engineering I took a technical product from conception to launch: a Python GPX quality pipeline for road-test telemetry. At Mercedes-Benz R&D I delivered EV integration with cross-functional vehicle and manufacturing teams. Comfortable with Python, self-directed data analysis, and sitting with engineering and operations on quality evaluation for vehicle and route data. M.S. Engineering Management, USC.
-
 SKILLS
-Product: product management for 0 to 1 technical products (conception to launch), quality evaluation and quality standards, product roadmap metrics, cross-functional delivery, FMEA, CAPA
+Product: product management for 0 to 1 technical products (conception to launch), quality evaluation and quality standards, product roadmap metrics, cross-functional delivery with engineering and operations, FMEA, CAPA
 Data: Python, pandas, GPX, geospatial datasets, driving telemetry, Power BI, Excel, self-directed data analysis
 Domain: ADAS, road network test routes, vehicle sensor mounts, auto OEM, consumer navigation, EV systems
 

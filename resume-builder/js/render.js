@@ -102,9 +102,6 @@
       esc(contact) +
       "</p>" +
       "</header>" +
-      "<section><h2>Summary</h2><p>" +
-      esc(window.ATS.sanitizeForExport(resume.summary)) +
-      "</p></section>" +
       "<section><h2>Skills</h2>" +
       skillRows(resume.skills) +
       "</section>" +
@@ -134,9 +131,6 @@
         .map(window.ATS.sanitizeForExport)
         .join(" | ")
     );
-    lines.push("");
-    lines.push("SUMMARY");
-    lines.push(window.ATS.sanitizeForExport(resume.summary));
     lines.push("");
     lines.push("SKILLS");
     Object.keys(resume.skills || {}).forEach(function (label) {

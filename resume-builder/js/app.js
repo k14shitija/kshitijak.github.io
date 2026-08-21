@@ -60,7 +60,6 @@
     $("field-phone").value = r.phone || "";
     $("field-email").value = r.email || "";
     $("field-linkedin").value = r.linkedin || "";
-    $("field-summary").value = r.summary || "";
     $("field-skill-product").value = r.skills.Product || "";
     $("field-skill-data").value = r.skills.Data || "";
     $("field-skill-domain").value = r.skills.Domain || "";
@@ -78,7 +77,6 @@
       ["field-phone", "phone"],
       ["field-email", "email"],
       ["field-linkedin", "linkedin"],
-      ["field-summary", "summary"],
       ["field-skill-product", "skills.Product"],
       ["field-skill-data", "skills.Data"],
       ["field-skill-domain", "skills.Domain"]

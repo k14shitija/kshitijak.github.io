@@ -57,11 +57,9 @@ window.RESUME_TEMPLATES["google-pm-geo"] = {
     phone: "213-245-5814",
     email: "kumbhark@usc.edu",
     linkedin: "linkedin.com/in/kshitija-kumbharkar",
-    summary:
-      "Mechanical engineer moving into product management for geospatial and ADAS data. At Porsche Engineering I took a technical product from conception to launch: a Python GPX quality pipeline for road-test telemetry. At Mercedes-Benz R&D I delivered EV integration with cross-functional vehicle and manufacturing teams. Comfortable with Python, self-directed data analysis, and sitting with engineering and operations on quality evaluation for vehicle and route data. M.S. Engineering Management, USC.",
     skills: {
       Product:
-        "product management for 0 to 1 technical products (conception to launch), quality evaluation and quality standards, product roadmap metrics, cross-functional delivery, FMEA, CAPA",
+        "product management for 0 to 1 technical products (conception to launch), quality evaluation and quality standards, product roadmap metrics, cross-functional delivery with engineering and operations, FMEA, CAPA",
       Data:
         "Python, pandas, GPX, geospatial datasets, driving telemetry, Power BI, Excel, self-directed data analysis",
       Domain:
