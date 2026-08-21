@@ -24,9 +24,8 @@
       </div>
 
       <div class="actions">
-        <button class="primary" id="btn-print" type="button">Print / Save PDF</button>
+        <a class="btn primary" id="btn-pdf" href="../resume.pdf" download="Kshitija_Kumbharkar_Resume.pdf">Download PDF</a>
         <button id="btn-txt" type="button">Download .txt</button>
-        <button id="btn-html" type="button">Download .html</button>
         <button id="btn-reset" type="button">Reset template</button>
       </div>
       <p class="note">
@@ -43,12 +42,8 @@
       <div class="section-title">Contact</div>
       <label for="field-name">Name</label>
       <input id="field-name" autocomplete="name" />
-      <label for="field-headline">Headline</label>
-      <input id="field-headline" />
       <label for="field-location">Location</label>
       <input id="field-location" />
-      <label for="field-relocation">Relocation</label>
-      <input id="field-relocation" />
       <label for="field-phone">Phone</label>
       <input id="field-phone" />
       <label for="field-email">Email</label>
@@ -63,6 +58,8 @@
       <textarea id="field-skill-data"></textarea>
       <label for="field-skill-domain">Domain</label>
       <textarea id="field-skill-domain"></textarea>
+      <label for="field-skill-cad">Design &amp; CAD</label>
+      <textarea id="field-skill-cad"></textarea>
       <p class="note">
         SQL is left off unless you use it at work. Add it here if that is true.
         Do not add machine learning deployment unless you shipped a model.
@@ -89,7 +86,7 @@
 
     <main class="stage">
       <p class="hint no-print">
-        Preview is the file Google ATS should parse: one column, Calibri, Skills / Experience / Projects / Education, three STAR bullets, no summary.
+        Preview is a one-page letter resume. Use Download PDF on the site homepage.
       </p>
       <div class="paper" id="preview"></div>
     </main>

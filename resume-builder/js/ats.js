@@ -42,7 +42,7 @@
       parts.push(key, resume.skills[key]);
     });
     (resume.experience || []).forEach(function (job) {
-      parts.push(job.company, job.role, job.location, job.dates);
+      parts.push(job.company, job.role, job.subtitle, job.location, job.dates);
     });
     (resume.bullets || []).forEach(function (b) {
       parts.push(b.compiled, b.situation, b.task, b.action, b.result);

@@ -54,13 +54,14 @@
   function renderForm() {
     var r = state.resume;
     $("field-name").value = r.name || "";
-    $("field-headline").value = r.headline || "";
     $("field-location").value = r.location || "";
-    $("field-relocation").value = r.relocation || "";
     $("field-phone").value = r.phone || "";
     $("field-email").value = r.email || "";
     $("field-linkedin").value = r.linkedin || "";
     $("field-skill-product").value = r.skills.Product || "";
+    $("field-skill-data").value = r.skills.Data || "";
+    $("field-skill-domain").value = r.skills.Domain || "";
+    $("field-skill-cad").value = r.skills["Design & CAD"] || "";
     $("field-skill-data").value = r.skills.Data || "";
     $("field-skill-domain").value = r.skills.Domain || "";
     $("template-label").textContent = state.template.name;
@@ -72,15 +73,14 @@
   function wireBasics() {
     [
       ["field-name", "name"],
-      ["field-headline", "headline"],
       ["field-location", "location"],
-      ["field-relocation", "relocation"],
       ["field-phone", "phone"],
       ["field-email", "email"],
       ["field-linkedin", "linkedin"],
       ["field-skill-product", "skills.Product"],
       ["field-skill-data", "skills.Data"],
-      ["field-skill-domain", "skills.Domain"]
+      ["field-skill-domain", "skills.Domain"],
+      ["field-skill-cad", "skills.Design & CAD"]
     ].forEach(function (pair) {
       var el = $(pair[0]);
       el.oninput = function () {
@@ -102,6 +102,8 @@
         '<input data-job="' + index + '" data-k="company" />' +
         "<label>Title</label>" +
         '<input data-job="' + index + '" data-k="role" />' +
+        "<label>Subtitle</label>" +
+        '<input data-job="' + index + '" data-k="subtitle" />' +
         "<label>Location</label>" +
         '<input data-job="' + index + '" data-k="location" />' +
         "<label>Dates</label>" +
@@ -354,8 +356,6 @@
       refresh();
     };
     $("btn-txt").onclick = exportTxt;
-    $("btn-html").onclick = exportHtml;
-    $("btn-print").onclick = printResume;
     $("btn-reset").onclick = function () {
       loadTemplate(state.templateId);
     };

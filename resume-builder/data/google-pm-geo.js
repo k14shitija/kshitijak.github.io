@@ -50,126 +50,99 @@ window.RESUME_TEMPLATES["google-pm-geo"] = {
     "operations"
   ],
   resume: {
-    name: "Kshitija Sunil Kumbharkar",
-    headline: "Product-minded engineer for geospatial, ADAS, and auto data products",
+    name: "Kshitija Kumbharkar",
     location: "Los Angeles, CA",
-    relocation: "Open to Mountain View, CA",
-    phone: "213-245-5814",
-    email: "kumbhark@usc.edu",
+    phone: "(213) 245-5814",
+    email: "kumbharkarkshitija14@gmail.com",
     linkedin: "linkedin.com/in/kshitija-kumbharkar",
     skills: {
       Product:
-        "product management for 0 to 1 technical products (conception to launch), quality evaluation and quality standards, product roadmap metrics, cross-functional delivery with engineering and operations, FMEA, CAPA",
+        "product management for 0 to 1 technical products (conception to launch), quality evaluation, quality standards, product roadmap metrics, cross-functional delivery with engineering and operations",
       Data:
-        "Python, pandas, GPX, geospatial datasets, driving telemetry, Power BI, Excel, self-directed data analysis",
+        "Python, geospatial datasets, driving telemetry, GPX, Excel, self-directed data analysis",
       Domain:
-        "ADAS, road network test routes, vehicle sensor mounts, auto OEM, consumer navigation, EV systems"
+        "ADAS, road network validation, vehicle sensor data, auto OEM, consumer navigation, EV wire-harness integration",
+      "Design & CAD":
+        "Siemens NX (UG-NX), CATIA V5, SolidWorks, GD&T, DFMEA, ECR/CN, PPAP/FAI"
     },
     experience: [
       {
-        company: "Porsche Engineering Services",
-        role: "ADAS Intern, Fleet and Test Data Tools",
+        company: "Porsche Engineering Services North America",
+        role: "Engineering Intern",
+        subtitle: "ADAS Validation Platform, Data & Vehicle Integration",
         location: "Carson, CA",
-        dates: "Jun 2025 - Present",
-        showBullets: true
+        dates: "Jun 2025 - May 2026"
       },
       {
         company: "Mercedes-Benz R&D India",
-        role: "Product Design Engineer, EV Systems and Harness Integration",
+        role: "Product Design Engineer",
+        subtitle: "EV Wire-Harness & Electromechanical Integration",
         location: "Pune, India",
-        dates: "Sep 2022 - Jul 2024",
-        showBullets: true
-      },
-      {
-        company: "Dassault Systemes",
-        role: "Design Intern, Simulation and Vehicle Dynamics",
-        location: "Pune, India",
-        dates: "Sep 2021 - Jul 2022",
-        showBullets: false
+        dates: "Sep 2022 - Jul 2024"
       },
       {
         company: "Cummins",
-        role: "Design Intern, Process Optimization and Test Support",
+        role: "Design Intern, Engine Test & Validation",
+        subtitle: "Durability & Validation Support",
         location: "Pune, India",
-        dates: "Jun 2021 - Sep 2021",
-        showBullets: false
+        dates: "Jun 2021 - Sep 2021"
       }
     ],
     bullets: [
       {
         experienceIndex: 0,
-        situation:
-          "ADAS test routes were dropping live tracking because GPX files had broken polylines and out-of-order timestamps.",
-        task:
-          "Make the fleet geospatial dataset trustworthy for live tracking and weather overlays used in validation.",
-        action:
-          "Scoped and shipped a Python GPX ingest and QC pipeline with health checks and dashboards, then sat with hardware and software teams to use the flags in first-pass log review.",
-        result:
-          "Validation could catch route and telemetry issues earlier instead of walking broken tracks by hand.",
+        situation: "ADAS validation was a 4-hour manual cycle.",
+        task: "Stand up a geospatial vehicle-data platform the fleet could trust.",
+        action: "Built the Python platform and used the output with engineering and operations.",
+        result: "Core validation cycle dropped from 4 hours to 25 minutes.",
         compiled:
-          "When ADAS test routes kept dropping live tracking on broken GPX polylines and out-of-order timestamps, I scoped a Python ingest and QC pipeline, added health checks and dashboards, and used those quality flags with hardware and software teams so validation could trust fleet telemetry and weather overlays."
+          "When ADAS validation was a 4-hour manual cycle, I built a geospatial vehicle-data platform in Python, cut the core cycle to 25 minutes, and used the output with engineering and operations so fleet telemetry and route tracking could be trusted."
       },
       {
         experienceIndex: 0,
-        situation:
-          "Sensor-mount and fixture records looked different on every fleet vehicle, so data quality was hard to compare across tests.",
-        task:
-          "Set a shared quality bar for fixture and sensor-mount data before cars went back on the route.",
-        action:
-          "Wrote test plans and verification checklists, ran first-pass FMEA with HW/SW, and turned classified issues into CAPA and roadmap metrics.",
-        result:
-          "The team had a repeatable way to decide what to fix before the next test window.",
+        situation: "The validation program was a 10-vehicle pilot.",
+        task: "Scale routing, test execution, and data capture without dropping quality.",
+        action: "Defined routing and test-execution and standardized fleet data capture.",
+        result: "Fleet grew to 50 vehicles while holding a 98% CARIAD quality target.",
         compiled:
-          "Sensor-mount records differed by vehicle, so I wrote fixture test plans and checklists, ran FMEA with hardware and software, and turned classified issues into CAPA and roadmap metrics the team used to pick fixes before the next test window."
+          "The program was a 10-vehicle pilot, so I defined routing and test-execution, scaled data capture to a 50-vehicle fleet, and held quality against a 98% CARIAD target."
       },
       {
         experienceIndex: 1,
-        situation:
-          "EV harness and bracket work was slipping PV/DV because routing, clearances, and fixture access were not locked.",
-        task:
-          "Get integration designs released on the build calendar with vehicle and manufacturing partners.",
-        action:
-          "Owned UG-NX layouts, GD&T, and clearance checks, and drove ECRs through cross-functional reviews until fabrication-ready drawings were out.",
-        result:
-          "PV/DV builds had routing and fixture access documented on schedule.",
+        situation: "CLA rear-end harness integration was blocking production release.",
+        task: "Get routing, packaging, and production drawings out on the release path.",
+        action: "Owned Siemens NX routing, packaging, and GD&T drawings, plus DFMEA and ECR/CN updates.",
+        result: "Cleared PPAP/FAI with Kroschu in Germany.",
         compiled:
-          "EV harness layouts were blocking PV/DV, so I owned the UG-NX design, GD&T, and clearance checks, ran ECRs with vehicle and manufacturing teams, and released fabrication-ready drawings on the build calendar."
+          "CLA rear-end harness integration was blocking production release, so I owned Siemens NX routing, packaging, and GD&T drawings, ran DFMEA and ECR/CN updates, and cleared PPAP/FAI with Kroschu in Germany."
       }
     ],
     projects: [
       {
-        name: "Houston ADAS Route and Fleet Tooling",
-        context: "Porsche Engineering",
-        tools: "Python, GPX, telemetry",
-        line: "Built GPX ingest and QC for the Houston fleet, including polyline and timestamp checks, so live tracking and weather overlays stayed usable on ADAS test routes."
+        name: "Audio PCBA Enclosure - Electronics Packaging (SolidWorks)",
+        context: "Personal project",
+        tools: "SolidWorks",
+        line: "Reverse-engineered a connector-dense audio PCBA with calipers and designed an injection-moldable enclosure with board-retention bosses, connector clearances, and port cutouts."
       },
       {
-        name: "ADAS Sensor-Mount Fixtures",
-        context: "Porsche Engineering",
-        tools: "test plans, verification checklists",
-        line: "Wrote sensor-mount fixture test plans and sign-off checklists so fleet vehicles could be instrumented the same way before a route."
-      },
-      {
-        name: "Formula Student Chassis and Braking",
+        name: "Formula Student, Veloce Racing - Chassis & Braking Lead",
         context: "Student project",
-        tools: "CAD, FEA, Python, GPX",
-        line: "Led chassis and brake design, then used pandas and GPX run files to review test-day performance with the team."
+        tools: "CAD, FEA",
+        line: "Performed structural FEA on chassis components under dynamic load cases, evaluated forged-material selection for fatigue life, and validated tolerance stack-ups during system integration."
       }
     ],
     education: [
       {
         school: "University of Southern California",
-        degree: "M.S., Engineering Management",
-        location: "Los Angeles, CA",
-        dates: "Aug 2024 - May 2026",
-        detail: "GPA 3.85/4.00"
+        degree: "M.S, Engineering Management",
+        dates: "May 2026",
+        detail: "GPA: 3.85/4.0"
       },
       {
         school: "Vishwakarma Institute of Technology",
         degree: "B.Tech, Mechanical Engineering",
-        location: "India",
-        dates: "Aug 2019 - Jul 2022",
-        detail: "GPA 4.00/4.00"
+        dates: "May 2022",
+        detail: ""
       }
     ]
   }

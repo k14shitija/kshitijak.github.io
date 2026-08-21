@@ -90,8 +90,8 @@ def test_export_is_ats_clean():
     text = rendered["text"]
     assert rendered["watermark"] is False
     assert "watermark" not in html.lower()
-    assert html.count("<li>") == 3
-    assert text.count("\n- ") == 3
+    assert html.count("<li>") == 5
+    assert text.count("\n- ") == 5
     assert FORBIDDEN.search(html) is None
     assert FORBIDDEN.search(text) is None
     lower = text.lower()
@@ -99,15 +99,13 @@ def test_export_is_ats_clean():
         assert phrase not in lower, phrase
     assert "Summary" not in html
     assert "SUMMARY" not in text
-    assert "Experience" in html
+    assert "Professional Experience" in html
     assert "Projects" in html
     assert "Education" in html
-    assert "Skills" in html
-    assert "Houston ADAS" in text
+    assert "Technical Expertise" in html
     assert "Formula Student" in text
-    assert "display:flex" not in html
-    assert "<table" not in html.lower()
-    assert "kumbhark@usc.edu" in text
+    assert "Audio PCBA" in text
+    assert "kumbharkarkshitija14@gmail.com" in text
     assert "Python" in text
     assert "geospatial" in text.lower()
 
@@ -124,7 +122,15 @@ def test_keyword_coverage():
     assert unexpected == [], unexpected
 
 
-def test_builder_pages_have_no_watermark_css():
+def test_one_page_pdf_exists():
+    site = JS_DIR.parent
+    html = (site / "resume.html").read_text(encoding="utf-8")
+    pdf = (site / "resume.pdf").read_bytes()
+    assert "SUMMARY" not in html
+    assert "watermark" not in html.lower()
+    assert "Kshitija Kumbharkar" in html
+    assert pdf.startswith(b"%PDF")
+    assert b"/Count 1" in pdf
     for path in JS_DIR.rglob("*.css"):
         text = path.read_text(encoding="utf-8").lower()
         assert "watermark" not in text, path
@@ -136,7 +142,7 @@ if __name__ == "__main__":
         test_three_star_bullets,
         test_export_is_ats_clean,
         test_keyword_coverage,
-        test_builder_pages_have_no_watermark_css,
+        test_one_page_pdf_exists,
     ]
     for fn in tests:
         fn()
