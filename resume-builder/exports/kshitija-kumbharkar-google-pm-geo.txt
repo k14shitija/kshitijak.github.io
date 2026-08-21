@@ -24,6 +24,17 @@ Design Intern, Simulation and Vehicle Dynamics | Pune, India
 Cummins | Jun 2021 - Sep 2021
 Design Intern, Process Optimization and Test Support | Pune, India
 
+PROJECTS
+
+Houston ADAS Route and Fleet Tooling | Porsche Engineering | Python, GPX, telemetry
+Built GPX ingest and QC for the Houston fleet, including polyline and timestamp checks, so live tracking and weather overlays stayed usable on ADAS test routes.
+
+ADAS Sensor-Mount Fixtures | Porsche Engineering | test plans, verification checklists
+Wrote sensor-mount fixture test plans and sign-off checklists so fleet vehicles could be instrumented the same way before a route.
+
+Formula Student Chassis and Braking | Student project | CAD, FEA, Python, GPX
+Led chassis and brake design, then used pandas and GPX run files to review test-day performance with the team.
+
 EDUCATION
 
 University of Southern California | Aug 2024 - May 2026

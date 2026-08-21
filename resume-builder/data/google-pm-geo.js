@@ -136,6 +136,26 @@ window.RESUME_TEMPLATES["google-pm-geo"] = {
           "EV harness layouts were blocking PV/DV, so I owned the UG-NX design, GD&T, and clearance checks, ran ECRs with vehicle and manufacturing teams, and released fabrication-ready drawings on the build calendar."
       }
     ],
+    projects: [
+      {
+        name: "Houston ADAS Route and Fleet Tooling",
+        context: "Porsche Engineering",
+        tools: "Python, GPX, telemetry",
+        line: "Built GPX ingest and QC for the Houston fleet, including polyline and timestamp checks, so live tracking and weather overlays stayed usable on ADAS test routes."
+      },
+      {
+        name: "ADAS Sensor-Mount Fixtures",
+        context: "Porsche Engineering",
+        tools: "test plans, verification checklists",
+        line: "Wrote sensor-mount fixture test plans and sign-off checklists so fleet vehicles could be instrumented the same way before a route."
+      },
+      {
+        name: "Formula Student Chassis and Braking",
+        context: "Student project",
+        tools: "CAD, FEA, Python, GPX",
+        line: "Led chassis and brake design, then used pandas and GPX run files to review test-day performance with the team."
+      }
+    ],
     education: [
       {
         school: "University of Southern California",

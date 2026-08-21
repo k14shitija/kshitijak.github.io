@@ -66,6 +66,7 @@
     $("template-label").textContent = state.template.name;
     renderStars();
     renderJobs();
+    renderProjects();
   }
 
   function wireBasics() {
@@ -115,6 +116,42 @@
         };
       });
     });
+  }
+
+  function renderProjects() {
+    var box = $("projects");
+    box.innerHTML = "";
+    if (!state.resume.projects) state.resume.projects = [];
+    state.resume.projects.forEach(function (project, index) {
+      var wrap = document.createElement("div");
+      wrap.className = "star-card";
+      wrap.innerHTML =
+        "<h3>Project " + (index + 1) + "</h3>" +
+        "<label>Name</label>" +
+        '<input data-project="' + index + '" data-k="name" />' +
+        "<label>Context</label>" +
+        '<input data-project="' + index + '" data-k="context" />' +
+        "<label>Tools</label>" +
+        '<input data-project="' + index + '" data-k="tools" />' +
+        "<label>One-line result</label>" +
+        '<textarea data-project="' + index + '" data-k="line"></textarea>' +
+        '<button type="button" data-remove-project="' + index + '">Remove project</button>';
+      box.appendChild(wrap);
+      wrap.querySelectorAll("input, textarea").forEach(function (input) {
+        var k = input.getAttribute("data-k");
+        input.value = project[k] || "";
+        input.oninput = function () {
+          state.resume.projects[index][k] = input.value;
+          refresh();
+        };
+      });
+      wrap.querySelector("button").onclick = function () {
+        state.resume.projects.splice(index, 1);
+        renderProjects();
+        refresh();
+      };
+    });
+    $("add-project").disabled = state.resume.projects.length >= 3;
   }
 
   function compileStar(b) {
@@ -302,6 +339,18 @@
         compiled: ""
       });
       renderStars();
+      refresh();
+    };
+    $("add-project").onclick = function () {
+      if (!state.resume.projects) state.resume.projects = [];
+      if (state.resume.projects.length >= 3) return;
+      state.resume.projects.push({
+        name: "",
+        context: "",
+        tools: "",
+        line: ""
+      });
+      renderProjects();
       refresh();
     };
     $("btn-txt").onclick = exportTxt;

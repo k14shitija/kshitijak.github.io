@@ -77,6 +77,37 @@
     }).join("");
   }
 
+  function renderProjects(resume) {
+    var projects = (resume.projects || []).filter(function (p) {
+      return String(p.name || "").trim();
+    });
+    if (!projects.length) return "";
+    return (
+      "<section><h2>Projects</h2>" +
+      projects
+        .map(function (p) {
+          var meta = [p.context, p.tools]
+            .filter(function (v) { return String(v || "").trim(); })
+            .map(function (v) { return window.ATS.sanitizeForExport(v); })
+            .join(" | ");
+          return (
+            '<div class="job">' +
+            "<p><strong>" +
+            esc(window.ATS.sanitizeForExport(p.name)) +
+            "</strong>" +
+            (meta ? " | " + esc(meta) : "") +
+            "</p>" +
+            (p.line
+              ? "<p>" + esc(window.ATS.sanitizeForExport(p.line)) + "</p>"
+              : "") +
+            "</div>"
+          );
+        })
+        .join("") +
+      "</section>"
+    );
+  }
+
   function renderHtml(resume) {
     var contact = [
       resume.location,
@@ -108,6 +139,7 @@
       "<section><h2>Experience</h2>" +
       renderExperience(resume) +
       "</section>" +
+      renderProjects(resume) +
       "<section><h2>Education</h2>" +
       renderEducation(resume) +
       "</section>" +
@@ -151,6 +183,24 @@
           lines.push("- " + window.ATS.sanitizeForExport(b.compiled));
         });
     });
+    var projects = (resume.projects || []).filter(function (p) {
+      return String(p.name || "").trim();
+    });
+    if (projects.length) {
+      lines.push("");
+      lines.push("PROJECTS");
+      projects.forEach(function (p) {
+        var meta = [p.context, p.tools]
+          .filter(function (v) { return String(v || "").trim(); })
+          .map(window.ATS.sanitizeForExport)
+          .join(" | ");
+        lines.push("");
+        lines.push(
+          window.ATS.sanitizeForExport(p.name) + (meta ? " | " + meta : "")
+        );
+        if (p.line) lines.push(window.ATS.sanitizeForExport(p.line));
+      });
+    }
     lines.push("");
     lines.push("EDUCATION");
     (resume.education || []).forEach(function (ed) {

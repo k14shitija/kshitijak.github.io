@@ -47,6 +47,9 @@
     (resume.bullets || []).forEach(function (b) {
       parts.push(b.compiled, b.situation, b.task, b.action, b.result);
     });
+    (resume.projects || []).forEach(function (p) {
+      parts.push(p.name, p.context, p.tools, p.line);
+    });
     (resume.education || []).forEach(function (ed) {
       parts.push(ed.school, ed.degree, ed.location, ed.dates, ed.detail);
     });
@@ -133,7 +136,18 @@
     checks.push({
       ok: !hasSummary,
       label: "No summary",
-      detail: hasSummary ? "Remove the summary. Recruiters and ATS get Skills, Experience, and Education only." : "No summary block."
+      detail: hasSummary ? "Remove the summary. Recruiters and ATS get Skills, Experience, Projects, and Education only." : "No summary block."
+    });
+
+    var namedProjects = (resume.projects || []).filter(function (p) {
+      return String(p.name || "").trim() && String(p.line || "").trim();
+    });
+    checks.push({
+      ok: namedProjects.length > 0,
+      label: "Projects",
+      detail: namedProjects.length
+        ? namedProjects.length + " project" + (namedProjects.length === 1 ? "" : "s") + " with a one-line result."
+        : "Add at least one project with a name and a result line."
     });
 
     var hasEdu = (resume.education || []).some(function (ed) {

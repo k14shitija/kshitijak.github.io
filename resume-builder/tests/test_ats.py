@@ -100,8 +100,11 @@ def test_export_is_ats_clean():
     assert "Summary" not in html
     assert "SUMMARY" not in text
     assert "Experience" in html
+    assert "Projects" in html
     assert "Education" in html
     assert "Skills" in html
+    assert "Houston ADAS" in text
+    assert "Formula Student" in text
     assert "display:flex" not in html
     assert "<table" not in html.lower()
     assert "kumbhark@usc.edu" in text

@@ -11,7 +11,8 @@ The default file is built from the public portfolio (Porsche Engineering ADAS fl
 ## Rules baked into the export
 
 - Max **3** experience bullets, each written from Situation / Task / Action / Result
-- One column, Calibri/Arial, standard headings: Skills, Experience, Education. No summary.
+- Up to **3** projects as name + one-line result (no extra bullets)
+- One column, Calibri/Arial, standard headings: Skills, Experience, Projects, Education. No summary.
 - No tables, icons, photos, headers, footers, or watermark layers
 - Hyphens only (no em dashes, curly quotes, or zero-width characters)
 - Stock generator phrases are flagged in the sidebar
